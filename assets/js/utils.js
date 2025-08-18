@@ -1,4 +1,30 @@
-// Toggle password visibility
+// Utility functions used across the application
+
+// Notification system
+function showNotification(message, type = 'success', duration = 3000) {
+    const notification = document.createElement('div');
+    notification.className = `notification ${type}`;
+    notification.innerHTML = `
+        <i class="fas ${type === 'success' ? 'fa-check-circle' : type === 'error' ? 'fa-exclamation-circle' : 'fa-exclamation-triangle'} mr-2"></i>
+        ${message}
+        <span class="notification-close ml-4" onclick="this.parentElement.remove()">
+            <i class="fas fa-times"></i>
+        </span>
+    `;
+    
+    document.body.appendChild(notification);
+    
+    // Auto-remove after duration
+    if (duration > 0) {
+        setTimeout(() => {
+            notification.remove();
+        }, duration);
+    }
+    
+    return notification;
+}
+
+// Password visibility toggler
 function togglePassword(inputId, icon) {
     const input = document.getElementById(inputId);
     if (input.type === 'password') {
@@ -12,8 +38,8 @@ function togglePassword(inputId, icon) {
     }
 }
 
-// Tab switching functionality
-document.addEventListener('DOMContentLoaded', function() {
+// Tab switching functionality for auth forms
+function setupAuthTabs() {
     // Toggle between login and signup forms
     document.getElementById('login-tab').addEventListener('click', function() {
         document.getElementById('login-tab').classList.add('text-indigo-600', 'border-indigo-600');
@@ -42,4 +68,14 @@ document.addEventListener('DOMContentLoaded', function() {
         e.preventDefault();
         document.getElementById('login-tab').click();
     });
+}
+
+// Initialize utilities when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // Only setup auth tabs if we're on a page with auth forms
+    if (document.getElementById('login-tab')) {
+        setupAuthTabs();
+    }
+    
+    // Other utility initializations can go here
 });

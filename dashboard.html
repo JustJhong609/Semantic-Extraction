@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Analytics Admin Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/dashboard.css">
+</head>
+<body class="bg-gray-50 font-sans">
+    <div class="flex h-screen overflow-hidden">
+        <!-- Sidebar -->
+        <div class="sidebar bg-white w-64 border-r border-gray-200 flex flex-col">
+            <!-- Sidebar content -->
+            <!-- ... (same as original) ... -->
+        </div>
+        
+        <!-- Main Content -->
+        <div class="flex-1 overflow-y-auto">
+            <!-- Header -->
+            <header class="bg-white border-b border-gray-200 py-4 px-6 flex justify-between items-center">
+                <!-- Header content -->
+                <!-- ... (same as original) ... -->
+            </header>
+            
+            <!-- Dashboard Content -->
+            <main class="p-6">
+                <!-- Dashboard Tab -->
+                <div id="dashboard" class="tab-content active">
+                    <!-- Dashboard widgets -->
+                    <!-- ... (same as original) ... -->
+                </div>
+                
+                <!-- Other tabs -->
+                <div id="users" class="tab-content">
+                    <!-- User management content -->
+                    <!-- ... (same as original) ... -->
+                </div>
+                
+                <!-- More tabs as needed -->
+            </main>
+        </div>
+    </div>
+
+    <script src="assets/js/utils.js"></script>
+    <script src="assets/js/dashboard/navigation.js"></script>
+    <script src="assets/js/dashboard/ui.js"></script>
+    <script src="assets/js/dashboard/charts.js"></script>
+</body>
+</html>
