@@ -48,17 +48,6 @@ export default function LoginForm({ switchToSignup }) {
       >
         {loading ? "Processing..." : "Login"}
       </button>
-
-      <p className="text-center text-sm text-gray-500 mt-4">
-        Don’t have an account?{" "}
-        <button
-          type="button"
-          className="text-indigo-600 hover:underline"
-          onClick={switchToSignup}
-        >
-          Sign up
-        </button>
-      </p>
     </form>
   );
 }
